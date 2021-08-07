@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-35+-sl$j9y)_c^s94c5z16hu!0=@81(lw=7p_8zwd77@46h8+#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ec2-18-117-195-59.us-east-2.compute.amazonaws.com']
 
 
 # Application definition
@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'users',
         'USER': 'scrummers',
-        'PASSWORD': 'root',
+        'PASSWORD': 'contrasenia',
         'HOST': 'localhost',
         'PORT': '',
         'OPTIONS':{
