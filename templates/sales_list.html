@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UFT-8">
+    <title>Interview code</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+</head>
+
+<body>
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>sale id</th>
+                <th>seller Name</th>
+                <th>Buyer Name</th>
+                <th>Item sale</th>
+                <th>Price</th>
+                <th>Adress</th>
+                <th>phone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        {% for enter in enters %}
+        <tr>
+            <td>{{ enter.id }}</td>
+            <td>{{ enter.owner_id }}</td>
+            <td>{{ enter.nameC }}</td>
+            <td>{{ enter.descrip }}</td>
+            <td>{{ enter.price }}</td>
+            <td>{{ enter.adress }}</td>
+            <td>{{ enter.phone}}</td>
+            <td>
+                <a href="/delete_sale/{{ enter.id }}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/totalsales/"><span class="btn btn-success">View total sales</span></a>
+    <a href="/view/"><span class="btn btn-success">Back</span></a>
+    <tbody>
+</body>
+
+</html>

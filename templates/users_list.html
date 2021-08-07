@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UFT-8">
+    <title>Interview code</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+</head>
+
+<body>
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>User Id</th>
+                <th>Fisrt Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.lastname }}</td>
+            <td>{{ user.email}}</td>
+            <td>
+                <a href="/edit/{{ user.id }}"><span class="btn btn-success">Edit</span></a>
+                <a href="/delete/{{ user.id }}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/emp/"><span class="btn btn-success">Back</span></a>
+    <a href="/sales/{{ user.id }}"><span class="btn btn-success">Add sale</span></a>
+    <a href="/totalsales/"><span class="btn btn-success">View total sales</span></a>
+    <tbody>
+</body>
+
+</html>
