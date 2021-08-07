@@ -45,9 +45,8 @@ def update(request, id):
     return redirect("/view")
 
 
-def add_sale(request, id):
-    
-    users = Users.objects.get(id=id)
+def add_sale(request):
+    print(id)
     if request.method == "POST":
         form = AddCompanyForm(request.POST)
         print(form)
@@ -59,7 +58,7 @@ def add_sale(request, id):
                 pass
     else:
         form = AddCompanyForm()
-    return render(request, 'add_sale.html', {'form':form, 'users':users})
+    return render(request, 'add_sale.html', {'form':form})
 
 def viewsales(request):
     enters = Enterprise.objects.all()
